@@ -24,10 +24,16 @@ def word_to_num(number:str)->str:
         'zero':'0'
     }
 
-    for key in num_dict:
-        number = number.replace(key,num_dict[key])
-
-    return number
+    def replace_word(input_string: str, words: list) -> str:
+        if not words:
+            return input_string
+        word = words[0]
+        if word in input_string:
+            input_string = input_string.replace(word, num_dict[word])
+        return replace_word(input_string, words[1:])
+    
+    words = list(num_dict.keys())
+    return replace_word(number, words)
 
 
 def num_to_word(number:str)->str:
@@ -56,10 +62,13 @@ def num_to_word(number:str)->str:
         '0': 'zero'
     }
 
-    num_in_words = ""
-    for digit in number:
-        num_in_words += word_dict[digit]
-    return num_in_words
+    def build_word(input_string: str, index: int = 0) -> str:
+        if index == len(input_string):
+            return ""
+        digit = input_string[index]
+        return word_dict[digit] + build_word(input_string, index + 1)
+
+    return build_word(number)
 
 def gcd(num1:int,num2:int)->int:
 
