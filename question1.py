@@ -62,6 +62,24 @@ def num_to_word(number:str)->str:
     return num_in_words
 
 def gcd(num1:int,num2:int)->int:
+
+    '''
+    Finds the greatest common divisor of two numbers
+
+    Args:
+    num1: The first number
+    num2: The second number
+    
+    Returns:
+    The greatest common divisor of num1 and num2
+
+    '''
+    
+    if num1 == 0:
+        return num2
+    if num2 == 0:
+        return num1
+
     if num1<num2:
         num1,num2 = num2,num1
     
