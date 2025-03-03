@@ -7,7 +7,7 @@ def word_to_num(number:str)->str:
     Args:
     number: A string representing the number in words (e.g., "one", "two", "three").
     
-    Return:
+    Returns:
     A string of digits corresponding to the word representation of the number (e.g., "1", "2", "3").
     '''
 
