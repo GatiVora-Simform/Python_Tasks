@@ -33,7 +33,13 @@ def word_to_num(number:str)->str:
         return replace_word(input_string, words[1:])
     
     words = list(num_dict.keys())
-    return replace_word(number, words)
+    result = replace_word(number, words)
+
+    if not result.isnumeric():
+        raise ValueError("Invalid input")
+
+
+    return result
 
 
 def num_to_word(number:str)->str:
@@ -101,6 +107,12 @@ def gcd(num1:int,num2:int)->int:
 
 number1 = input("Enter first number: ")
 number2 = input("Enter second number: ")
+
+if number1 == '' or number2 == '':
+    raise ValueError("Both inputs must be non-empty strings")
+if not number1.isalpha() or not number2.isalpha():
+    raise ValueError("Both inputs must be strings")
+
 
 number1 = int(word_to_num(number1))
 number2 = int(word_to_num(number2))
