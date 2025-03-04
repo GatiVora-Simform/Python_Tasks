@@ -111,7 +111,7 @@ number2 = input("Enter second number: ")
 if number1 == '' or number2 == '':
     raise ValueError("Both inputs must be non-empty strings")
 if not number1.isalpha() or not number2.isalpha():
-    raise ValueError("Both inputs must be strings")
+    raise ValueError("Both inputs must be valid string of words between one to nine")
 
 
 number1 = int(word_to_num(number1))
