@@ -1,4 +1,13 @@
 def generate_parenthesis(n: int) -> list:
+
+    '''
+    Generates all possible combinations of well-formed parentheses for a given number of pairs.
+    Args:
+    n (int): the number of pairs of parentheses.
+    Returns:
+    list: a list of all possible combinations of well-formed parentheses.
+    '''
+
     result = []  
     stack = []   
     
